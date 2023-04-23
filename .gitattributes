@@ -1,0 +1,6 @@
+**/filebeat filter=lfs diff=lfs merge=lfs -text
+hassio-filebeat-binaries/-/raw/main/8.7.0/amd64/filebeat filter=lfs diff=lfs merge=lfs -text
+hassio-filebeat-binaries/-/raw/main/8.6.2/amd64/filebeat filter=lfs diff=lfs merge=lfs -text
+hassio-filebeat-binaries/-/raw/main/8.7.0/aarch64/filebeat filter=lfs diff=lfs merge=lfs -text
+hassio-filebeat-binaries/-/raw/main/8.6.2/aarch64/filebeat filter=lfs diff=lfs merge=lfs -text
+hassio-filebeat-binaries/-/raw/main/8.6.2/arm7/filebeat filter=lfs diff=lfs merge=lfs -text
