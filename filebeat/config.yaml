@@ -1,6 +1,6 @@
 name: "Filebeat"
 description: "Filebeat addon that can be used to ship home-assistant.log file to your ES Cluster."
-version: "0.3.14"
+version: "0.3.15"
 image: "crackyn/hassio-filebeat-{arch}"
 slug: "filebeat"
 init: false
