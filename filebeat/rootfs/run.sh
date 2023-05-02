@@ -81,6 +81,9 @@ function _config_check {
 
 	# Symlink selected filebeat version
 	l "Using Filebeat version $(bashio::config filebeat_version)"
+	if test -f "/bin/filebeat"; then
+    		unlink /bin/filebeat
+	fi
 	ln -s /bin/filebeat-$(bashio::config filebeat_version) /bin/filebeat
 }
 
