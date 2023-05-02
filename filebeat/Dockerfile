@@ -2,8 +2,8 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 RUN mkdir downloads
-RUN curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ver}-x86_64.tar.gz --output downloads/filebeat-${ver}-x86_64.tar.gz
-RUN curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ver}-aarch64.tar.gz --output downloads/filebeat-${ver}-aarch64.tar.gz
+RUN curl "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ver}-x86_64.tar.gz" --output downloads/filebeat-${ver}-x86_64.tar.gz
+RUN curl "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ver}-aarch64.tar.gz" --output downloads/filebeat-${ver}-aarch64.tar.gz
 
 RUN tar txvf downloads/filebeat-${ver}-x86_64.tar.gz -C downloads
 RUN mv downloads/filebeat-${ver}-x86_64 downloads/filebeat-${ver}-amd64
