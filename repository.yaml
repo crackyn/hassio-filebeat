@@ -1,3 +1,7 @@
 name: Filebeat Home-Assistant Addon
 url: https://github.com/crackyn/hassio-filebeat
+<<<<<<< HEAD
 maintainer: Chip Fletcher
+=======
+maintainer: Marko Todoric <maretodoric@gmail.com>
+>>>>>>> c166789582ed74a9aafc6fb50c9e0f688f909794
