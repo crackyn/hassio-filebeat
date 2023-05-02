@@ -1,13 +1,13 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-RUN mkdir /tmp
-RUN curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ver}-x86_64.tar.gz --output /tmp/filebeat-${ver}-x86_64.tar.gz
-RUN curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ver}-aarch64.tar.gz --output /tmp/filebeat-${ver}-aarch64.tar.gz
+RUN mkdir /downloads
+RUN curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ver}-x86_64.tar.gz --output /downloads/filebeat-${ver}-x86_64.tar.gz
+RUN curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ver}-aarch64.tar.gz --output /downloads/filebeat-${ver}-aarch64.tar.gz
 
-RUN tar /tmp/txvf filebeat-${ver}-x86_64.tar.gz -C /tmp
-RUN mv /tmp/filebeat-${ver}-x86_64 /tmp/filebeat-${ver}-amd64
-RUN tar zxvf filebeat-${ver}-aarch64.tar.gz -C /tmp
+RUN tar /downloads/txvf filebeat-${ver}-x86_64.tar.gz -C /downloads
+RUN mv /downloads/filebeat-${ver}-x86_64 /downloads/filebeat-${ver}-amd64
+RUN tar zxvf /downloads/filebeat-${ver}-aarch64.tar.gz -C /downloads
 
 COPY rootfs /
 
@@ -17,6 +17,6 @@ RUN \
     FB_VERSIONS="7.17.4 8.0.1 8.1.3 8.2.3 8.6.2 8.7.0" && \
     find /opt -iname *.yml | xargs chmod 644 && \
     for ver in $FB_VERSIONS; cp /tmp/filebeat-${ver}-${BUILD_ARCH}/filebeat /bit/filebeat-${ver}; ln -s /bin/filebeat-${ver} /bin/filebeat; chmod +x /bin/filebeat-$ver; done && \
-    rm -rf /env && rm -rf /tmp
+    rm -rf /env && rm -rf /downloads
 
 CMD [ "/run.sh" ]
