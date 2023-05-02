@@ -13,7 +13,7 @@ auth_api: true
 ingress: false
 homeassistant: 2022.3.1
 arch:
-  - armv7
+#  - armv7
   - amd64
   - aarch64
 options:
@@ -27,7 +27,7 @@ options:
   es_pipeline_path: ""
   kibana_url: ""
   enable_journal: true
-  filebeat_version: 8.6.2
+  filebeat_version: 8.7.0
   fb_log_level: info
   clear_cache: false
   debug_mode: false
@@ -42,8 +42,7 @@ schema:
   es_pipeline_path: str?
   kibana_url: str?
   enable_journal: bool
-  filebeat_version: list(7.17.4|8.0.1|8.1.3|8.2.3|8.6.2)
-  fb_log_level: list(error|warning|info|debug)
+fb_log_level: list(error|warning|info|debug)
   clear_cache: bool
   debug_mode: bool
 map:
