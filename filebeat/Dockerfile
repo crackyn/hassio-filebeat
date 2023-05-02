@@ -16,7 +16,7 @@ ARG BUILD_ARCH
 RUN \
     FB_VERSIONS="7.17.4 8.0.1 8.1.3 8.2.3 8.6.2 8.7.0" && \
     find /opt -iname *.yml | xargs chmod 644 && \
-    for ver in $FB_VERSIONS; cp /tmp/filebeat-${ver}-${BUILD_ARCH}/filebeat /bit/filebeat-${ver}; ln -s /bin/filebeat-${ver} /bin/filebeat; chmod +x /bin/filebeat-$ver; done && \
+    for ver in $FB_VERSIONS; cp /    rm -rf /env && rm -rf /downloads/filebeat-${ver}-${BUILD_ARCH}/filebeat /bit/filebeat-${ver}; ln -s /bin/filebeat-${ver} /bin/filebeat; chmod +x /bin/filebeat-$ver; done && \
     rm -rf /env && rm -rf /downloads
 
 CMD [ "/run.sh" ]
